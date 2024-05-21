@@ -1,41 +1,12 @@
 ---
 layout: page
 permalink: /repositories/
-title: repositories
-description: Edit the `_data/repositories.yml` and change the `github_users` and `github_repos` lists to include your own GitHub profile and repositories.
+title: Repositories
 nav: true
 nav_order: 4
 ---
 
-## GitHub users
-
-{% if site.data.repositories.github_users %}
-
-<div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
-  {% for user in site.data.repositories.github_users %}
-    {% include repository/repo_user.liquid username=user %}
-  {% endfor %}
-</div>
-
----
-
-{% if site.repo_trophies.enabled %}
-{% for user in site.data.repositories.github_users %}
-{% if site.data.repositories.github_users.size > 1 %}
-
-  <h4>{{ user }}</h4>
-  {% endif %}
-  <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
-  {% include repository/repo_trophies.liquid username=user %}
-  </div>
-
----
-
-{% endfor %}
-{% endif %}
-{% endif %}
-
-## GitHub Repositories
+I am the lead developer of two [Julia](https://julialang.org/) packages designed for working with dynamic models. [SBMLImporter.jl](https://github.com/sebapersson/SBMLImporter.jl) imports dynamic models in the SBML format into a ReactionSystem for Gillespie, SDE, and ODE simulations. [PEtab.jl](https://github.com/sebapersson/PEtab.jl) creates parameter estimation or Bayesian inference problems for dynamic ODE models.
 
 {% if site.data.repositories.github_repos %}
 
